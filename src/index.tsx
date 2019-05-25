@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {db} from './firebase';
+
+db.collection('users').get().then(s => console.log(s));
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {db} from './firebase';
+import { firestore } from './firebase';
 
-db.collection('users').get().then(s => console.log(s));
+firestore
+  .collection('users')
+  .get()
+  .then((s) => console.log(s));
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
